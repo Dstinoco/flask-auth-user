@@ -1,5 +1,6 @@
 from flask import render_template, redirect, url_for, request, session
-from app import app
+from projeto import app
+from flask_login import login_required
 
 @app.route('/')
 def index():

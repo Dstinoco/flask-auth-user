@@ -1,5 +1,5 @@
-from app import app, database
-from app.models import Usuario, Foto
+from projeto import app, database
+from projeto.models import Usuario, Foto
 
 
 with app.app_context():
