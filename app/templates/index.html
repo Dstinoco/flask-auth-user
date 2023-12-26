@@ -1,0 +1,19 @@
+<html>
+    <body>
+        <h1>
+            Olá mundo
+        </h1>
+
+        <form action="{{ url_for('receber') }}" method="post">
+            <label for="nome">Nome</label>
+            <input type="text", name="nome"><br>
+
+            <label for="idade">Idade</label>
+            <input type="text", name="idade"><br>
+
+
+            <button type="submit">Enviar</button>
+            
+        </form>
+    </body>
+</html>

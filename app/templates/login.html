@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='teste.css') }}">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Tela Login</h1>
+<form action="{{ url_for('validacao') }}" method="post">
+    <label for="login">Login</label>
+    <input type="text" name="login">
+    <br>
+    <label for="password">Senha</label>
+    <input type="password" name="password">
+    <br>
+    <button type="submit">Acessar</button>
+</form>
+</body>
+</html>
