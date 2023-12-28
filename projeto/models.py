@@ -3,8 +3,6 @@ from datetime import datetime
 from flask_login import UserMixin
 
 
-
-
 @login_manager.user_loader
 def load_usuario(id_usuario):
     return Usuario.query.get(int(id_usuario))
