@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body> 
+    <form action="" method="POST">
+        {{ form.csrf_token }}
+
+        {{ form.username.label() }}<br>
+        {{ form.username() }}<br>
+
+        {{ form.senha.label() }}<br>
+        {{ form.senha() }}<br>
+
+        {{ form.confirmacao_senha.label() }}<br>
+        {{ form.confirmacao_senha() }}<br>
+
+        {{ form.submit() }}
+    </form>
+</body>
+</html>

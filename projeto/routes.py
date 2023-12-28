@@ -1,5 +1,7 @@
 from flask import render_template, redirect, url_for, request, session
-from app import app
+from projeto import app
+from flask_login import login_required
+from projeto.forms import FormCriarConta, FormLogin
 
 @app.route('/')
 def index():
@@ -8,16 +10,21 @@ def index():
 
 @app.route("/teste")
 def teste():
-    return render_template('index.html'), 200
+    return render_template('index.html')
 
+
+@app.route("/cadastro")
+def cadastro():
+    formcadastro = FormCriarConta()
+    return render_template("cadastrar.html", form=formcadastro)
 
 @app.route("/receber", methods=['GET', 'POST'])
 def receber():
     if request.method == 'GET':
-        return f"estou em receber <br> nome: {request.args.get('nome')}<br> idade: {request.args.get('idade')}", 200
+        return f"estou em receber <br> nome: {request.args.get('nome')}<br> idade: {request.args.get('idade')}"
     
     elif request.method == 'POST':
-        return f"estou em receber <br> nome: {request.form['nome']}<br> idade: {request.form['idade']}", 200
+        return f"estou em receber <br> nome: {request.form['nome']}<br> idade: {request.form['idade']}"
 
 
 @app.route("/session")
