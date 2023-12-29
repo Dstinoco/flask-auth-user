@@ -7,8 +7,9 @@ import secrets
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = "sqlite:///comunidade.db"
 
-if "SECRET_KEY" not in app.config:
-    app.config['SECRET_KEY'] = secrets.token_hex(16)
+
+app.config['SECRET_KEY'] = '5d47052b3a8493d24f700710c81df5fe'
+
 
 database = SQLAlchemy(app)
 bcrypt =  Bcrypt(app)

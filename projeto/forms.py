@@ -6,7 +6,7 @@ from wtforms.validators import DataRequired, Email, EqualTo, Length, ValidationE
 from projeto.models import Usuario 
 
 class FormLogin(FlaskForm):
-    email = StringField('E-mail', validators=[DataRequired(), Email()])
+    username = StringField('Usuário', validators=[DataRequired()])
     senha = PasswordField("Senha", validators=[DataRequired()])
     submit = SubmitField('Entrar')
 

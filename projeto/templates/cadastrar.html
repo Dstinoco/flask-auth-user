@@ -1,24 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Cadastro</title>
 </head>
 <body> 
+    {% set mensagens = get_flashed_messages() %}
+
+    {% if mensagens %}
+    <div>
+        {% for msg in mensagens %}
+        {{ msg }}
+        {% endfor %}
+    </div>
+    {% endif %}
+
+<div class="container">
+    <h1>Formulário de cadastro</h1>
     <form action="" method="POST">
         {{ form.csrf_token }}
 
-        {{ form.username.label() }}<br>
-        {{ form.username() }}<br>
+        <div class="form-group">
+            {{ form.username.label(class="form-control-label") }}
+            {{ form.username(class="form-control") }}
+        </div>
 
-        {{ form.senha.label() }}<br>
-        {{ form.senha() }}<br>
+        <div class="form-group">
+            {{ form.email.label(class="form-control-label") }}
+            {{ form.email(class="form-control") }}     
+        </div>
 
-        {{ form.confirmacao_senha.label() }}<br>
-        {{ form.confirmacao_senha() }}<br>
+        <div class="form-group">
+            {{ form.senha.label(class="form-control-label") }}
+            {{ form.senha(class="form-control") }}
+        </div>
 
-        {{ form.submit() }}
+        <div class="form-group">
+            {{ form.confirmacao_senha.label(class="form-control-label") }}
+            {{ form.confirmacao_senha(class="form-control") }}        
+        </div>
+        
+        {{ form.submit(class="btn btn-primary") }}
     </form>
+</div>    
 </body>
 </html>
